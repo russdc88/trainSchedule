@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Css Bootstrap-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+
+	<!-- Javascript, Jquery, Popper.js, and Bootstrap js-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<!-- Moment.js-->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+	<!-- FireBase database link-->
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+
+	<!-- my Css file-->
+	<link rel="stylesheet" href="./assets/css/style.css">
+
+
+	<title>Train Schedule</title>
+</head>
+<!-- Top Page using jumbotron feature from bootstrap-->
+
+<body>
+	<div class="jumbotron jumbotron-fluid text-center">
+		<div class="container">
+			<h1 class="display-4">All Aboard!</h1>
+			<p class="lead">This page shows a list of train stations and their frequency of when come by the station. Submit your own!</p>
+		</div>
+	</div>
+
+
+	<!-- Form to fill out -->
+	<div class="container survey pb-4">
+		<h5> Add train</h5>
+		<form>
+			<div class="form-group">
+				<label for="trainName">Train Name</label>
+				<input type="text" class="form-control" id="trainName" aria-describedby="trainHelp" placeholder="Enter train name here">
+				<small id="trainHelp" class="form-text text-muted">Ex: Hogwarts Express</small>
+			</div>
+			<div class="form-group">
+				<label for="destination">Destination</label>
+				<input type="text" class="form-control" id="destination" placeholder="Enter destination here">
+			</div>
+			<div class="form-group">
+				<label for="trainTime">First Train Time (HH:mm - military time)</label>
+				<input type="time" class="form-control" id="trainTime" placeholder="Ex:12:20 PM">
+			</div>
+			<div class="form-group">
+				<label for="frequency">Frequency (min)</label>
+				<input type="number" class="form-control" id="frequency" placeholder="Ex: 15">
+			</div>
+			<button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+		</form>
+	</div>
+	<!-- creating data table-->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card mb-4">
+					<div class="card-body">
+						Current Trains
+						<table class="table table-sm table-hover" id="train-table">
+							<thead>
+								<tr>
+									<th scope="col">
+										Train Name
+									</th>
+									<th scope="col">
+										Destination
+									</th>
+									<th scope="col">
+										Frequency(min)
+									</th>
+									<th scope="co">
+										Next Arrival
+									</th>
+									<th scope="co">
+										Minutes Away (min)
+									</th>
+								</tr>
+							</thead>
+							<!-- where data will fill in-->
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<!-- my javascript file-->
+	<script src="./assets/javascript/app.js"></script>
+
+</body>
+
+</html>
